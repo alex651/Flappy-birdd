@@ -10,3 +10,18 @@ class Bird {
     this.score = 0;
     this.up = false;
   }
+ 
+ show() {
+    fill(255);
+    push();
+    imageMode(CENTER);
+    translate(this.x, this.y);
+    if (this.up || this.velocity < 0) {
+      rotate(-35);
+    } else {
+      rotate(35);
+    }
+    // ellipse(this.x, this.y, this.r);
+    image(birdImg, 0, 0, this.r, this.r);
+    pop();
+  }
