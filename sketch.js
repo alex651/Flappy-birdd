@@ -1,21 +1,11 @@
-let bird;
-
-let birdImg;
-
-function preload() {
-  birdImg = loadImage("banaan.png");
-}
-
+var bird;
 
 function setup() {
-  createCanvas(400, 600);
-  frameRate(40);
-  bird = new Bird(width/3, height / 3);
-  bird.flap();
+createCanvas(400, 600);
+bird = new bird();
 }
 
- {
-  // draw bird
-  bird.show();
-  bird.update();
- }
+function draw() {
+background(0);
+bird.show();
+}
