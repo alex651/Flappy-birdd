@@ -11,8 +11,19 @@ function bird(){
   }
 
   this.update = function()  {
-  this.velocity += this.gravity;
-  this.y += this.velocity;
+    this.velocity += this.gravity;
+    this.y += this.velocity;
+
+    if (this.y > height) {
+      this.y = height;
+      this.velocity = 0;
+    }
+
+    if (this.y < 0) {
+      this.y = 0;
+      this.velocity = 0;
+    }
+
   }
 
 
