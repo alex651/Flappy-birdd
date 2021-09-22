@@ -11,7 +11,7 @@ class Bird {
     this.up = false;
   }
  
- show() {
+  show() {
     fill(255);
     push();
     imageMode(CENTER);
