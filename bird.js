@@ -10,6 +10,10 @@ function bird(){
     ellipse(this.x, this.y, 32, 32);
   }
 
+  this.up = function() {
+    this.velocity += -this.gravity*10;
+  }
+
   this.update = function()  {
     this.velocity += this.gravity;
     this.y += this.velocity;
