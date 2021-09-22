@@ -25,3 +25,24 @@ class Bird {
     image(birdImg, 0, 0, this.r, this.r);
     pop();
   }
+ 
+  update() {
+    this.velocity += this.gravity;
+    this.velocity = constrain(this.velocity, -25, 25);
+    this.y += this.velocity;
+    if (this.y > height) {
+      this.velocity = 0;
+      this.y = height;
+    } else if (this.y < 0) {
+      this.velocity = 0;
+      this.y = 0;
+    }
+    this.up = false;
+  }
+
+  flap() {
+    this.velocity += this.lift;
+    this.velocity *= (1 - this.friction);
+    this.up = true;
+  }
+}
