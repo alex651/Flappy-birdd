@@ -31,7 +31,15 @@ for (var i = pipes.length - 1; i >= 0; i--) {
     pipes[i].show();
     pipes[i].update();
 
+  if (pipes[i].hits(bird)) {
+      strokeWeight(9);
+      rectMode(CENTER);
+      fill(255);
+      playing = false;
+      noLoop();
+    }
   }
+
 }
 
 function keyPressed(){

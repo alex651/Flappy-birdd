@@ -9,6 +9,15 @@ function pipe() {
   this.top = floor(random(this.min_height, this.max_height));
   this.speed = 3;
 
+  this.hits = function(bird) {
+    if (bird.x > this.x && bird.x < this.x + this.w) {
+      if (bird.y < this.top ||
+        bird.y > this.top + this.gap) {
+        return true;
+      }
+    }
+    return false;
+  }
   this.show = function() {
      fill(255, 0, 0);
     /* top pipe */
