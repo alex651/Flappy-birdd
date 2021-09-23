@@ -1,11 +1,13 @@
 var bird;
 var pipes = [];
 
-let birdImg;
+let birdImg, pipeRevImg, pipeImg;
 
 function preload() {
   birdImg = loadImage("banaan.png");
   backgroundImg = loadImage("achtergrond.jpg")
+  pipeRevImg = loadImage("aaprev.png")
+  pipeImg = loadImage("pipe.png")
 }
 
 function setup() {
@@ -21,7 +23,7 @@ function draw() {
   bird.update();
   bird.show();
 
-  if (frameCount % 75 == 0) {
+  if (frameCount % 100 == 0) {
     pipes.push(new pipe());
   }
 
