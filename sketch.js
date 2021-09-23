@@ -1,5 +1,13 @@
 var bird;
 var pipes = [];
+
+let birdImg;
+
+function preload() {
+  birdImg = loadImage("banaan.png");
+  backgroundImg = loadImage("achtergrond.jpg")
+}
+
 function setup() {
   createCanvas(400, 600);
   bird = new bird();
@@ -7,7 +15,9 @@ function setup() {
 }
 
 function draw() {
-  background(0);
+  background(backgroundImg);
+  
+  // draw bird
   bird.update();
   bird.show();
 
@@ -15,7 +25,7 @@ function draw() {
     pipes.push(new pipe());
   }
 
-  for (var i = 0; i < pipes.length; i++) {
+for (var i = pipes.length - 1; i >= 0; i--) {
     pipes[i].show();
     pipes[i].update();
 
