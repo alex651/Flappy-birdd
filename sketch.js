@@ -6,8 +6,8 @@ let birdImg, pipeRevImg, pipeImg;
 function preload() {
   birdImg = loadImage("banaan.png");
   backgroundImg = loadImage("achtergrond.jpg")
-  pipeRevImg = loadImage("download.png")
-  pipeImg = loadImage("pipe.png")
+  pipeRevImg = loadImage("pipe.png")
+  pipeImg = loadImage("download.png")
 }
 
 function setup() {
