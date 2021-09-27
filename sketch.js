@@ -23,7 +23,7 @@ function draw() {
   bird.update();
   bird.show();
 
-  if (frameCount % 100 == 0) {
+  if (frameCount % 75 == 0) {
     pipes.push(new pipe());
   }
 
