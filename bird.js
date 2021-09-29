@@ -13,7 +13,7 @@
     translate(this.x, this.y);
     if (this.up || this.velocity < 0) 
     // ellipse(this.x, this.y, 32, 32);
-    image(birdImg, 0, 0, 100, this.r);
+    image(birdImg, 0, 0, 150, this.r);
     pop();
   }
 

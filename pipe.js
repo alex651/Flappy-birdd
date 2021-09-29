@@ -7,7 +7,7 @@ function pipe() {
   this.min_height = 100;
   this.max_height = height - this.min_height - this.gap;
   this.top = floor(random(this.min_height, this.max_height));
-  this.speed = 4;
+  this.speed = 5;
 
   this.hits = function(bird) {
     if (bird.x > this.x && bird.x < this.x + this.w) {
