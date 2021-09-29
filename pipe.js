@@ -2,7 +2,7 @@ function pipe() {
   this.top = random(height/2);
   this.bottom = random(height/2);
   this.x = width;
-  this.w = 90;
+  this.w = 120;
   this.gap = 120;
   this.min_height = 100;
   this.max_height = height - this.min_height - this.gap;
