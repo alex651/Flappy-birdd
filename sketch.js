@@ -1,5 +1,6 @@
 var bird;
 var pipes = [];
+var jumpSound;
 
 let birdImg, pipeRevImg, pipeImg;
 
@@ -8,12 +9,16 @@ function preload() {
   backgroundImg = loadImage("achtergrond.jpg")
   pipeRevImg = loadImage("image.png")
   pipeImg = loadImage("pipe.png")
+  jumpSound = loadSound("hop.wav")
+  backgroundSound = loadSound("kahoot.mp3");
 }
 
 function setup() {
   createCanvas(400, 600);
   bird = new bird();
   pipes.push(new pipe());
+  jumpSound.setVolume(0.4);
+  backgroundSound.loop();
 }
 
 function draw() {
@@ -45,6 +50,8 @@ for (var i = pipes.length - 1; i >= 0; i--) {
 function keyPressed(){
   if (key == ' ') {
     bird.up();
+    jumpSound.play();
+
     //console.log("SPACE");
 
   }
