@@ -11,6 +11,7 @@ function preload() {
   pipeImg = loadImage("pipe.png")
   jumpSound = loadSound("hop.wav")
   backgroundSound = loadSound("kahoot.mp3");
+  dieSound = loadSound("die.mp3")
 }
 
 function setup() {
@@ -42,6 +43,8 @@ for (var i = pipes.length - 1; i >= 0; i--) {
       fill(255);
       playing = false;
       noLoop();
+      dieSound.play();
+
     }
   }
 
