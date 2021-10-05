@@ -1,7 +1,7 @@
 var bird;
 var pipes = [];
 var jumpSound;
-
+var gameState = 0; // 0 = menu, 1 = game
 let birdImg, pipeRevImg, pipeImg;
 
 function preload() {
@@ -22,7 +22,22 @@ function setup() {
   backgroundSound.loop();
 }
 
-function draw() {
+function draw(){
+  text("gameState" + gameState, 25, 25);
+
+  if (gameState == 0) {
+    background(backgroundImg)
+    textSize(35)
+    fill("white")
+    text("Press space to start", 50, 300) 
+  }
+
+  if (gameState == 1) {
+    game();
+  }
+}
+
+function game() {
   background(backgroundImg);
   
   // draw bird
@@ -54,9 +69,14 @@ function keyPressed(){
   if (key == ' ') {
     bird.up();
     jumpSound.play();
+  }
+console.log(keyCode);
 
-    //console.log("SPACE");
-
+  if (keyCode == 50) {
+    gameState = 0;
   }
 
+  if (keyCode == 32) {
+    gameState = 1;
+  }
 }
