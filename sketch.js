@@ -3,7 +3,7 @@ var pipes = [];
 var jumpSound;
 var gameState = 0; // 0 = menu, 1 = game
 let birdImg, pipeRevImg, pipeImg;
-
+var score = 0;
 function preload() {
   birdImg = loadImage("banaan.png");
   backgroundImg = loadImage("achtergrond.jpg")
@@ -51,7 +51,10 @@ function game() {
 for (var i = pipes.length - 1; i >= 0; i--) {
     pipes[i].show();
     pipes[i].update();
-
+    
+    if (pipes[i].pass(bird)) {
+      score += 1;
+    }
   if (pipes[i].hits(bird)) {
       strokeWeight(9);
       rectMode(CENTER);
@@ -62,7 +65,7 @@ for (var i = pipes.length - 1; i >= 0; i--) {
 
     }
   }
-
+    text("Score: " + score, 20, 120);
 }
 
 function keyPressed(){

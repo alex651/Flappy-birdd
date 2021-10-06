@@ -1,4 +1,4 @@
- function bird(){
+function bird(){
   this.y = height/2;
   this.x = 64;
   this.r = 60;
