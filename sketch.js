@@ -61,10 +61,16 @@ for (var i = pipes.length - 1; i >= 0; i--) {
       playing = false;
       noLoop();
       dieSound.play();
-      score = 0;
+      
     }
   }
-  text(score, 50, 50);
+  text(score, 50, 30);
+ 
+  if (score == 5) {
+    playing = false;
+    noLoop();
+    dieSound.play();
+  }
 }
 
 if (score == 1) {
@@ -86,3 +92,4 @@ console.log(keyCode);
     gameState = 1;
   }
 }
+
