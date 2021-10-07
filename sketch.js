@@ -46,15 +46,14 @@ function game() {
 
   if (frameCount % 75 == 0) {
     pipes.push(new pipe());
+    score = score + 1;
   }
 
 for (var i = pipes.length - 1; i >= 0; i--) {
     pipes[i].show();
     pipes[i].update();
     
-    if (pipes[i].pass(bird)) {
-      score += 1;
-    }
+
   if (pipes[i].hits(bird)) {
       strokeWeight(9);
       rectMode(CENTER);
@@ -62,10 +61,14 @@ for (var i = pipes.length - 1; i >= 0; i--) {
       playing = false;
       noLoop();
       dieSound.play();
-
+      score = 0;
     }
   }
-    text("Score: " + score, 20, 120);
+  text(score, 50, 50);
+}
+
+if (score == 1) {
+    score += 1
 }
 
 function keyPressed(){
