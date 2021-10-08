@@ -39,11 +39,9 @@ function draw(){
 
 function game() {
   background(backgroundImg);
-  
   // draw bird
   bird.update();
   bird.show();
-
   if (frameCount % 75 == 0) {
     pipes.push(new pipe());
     score = score + 1;
@@ -64,7 +62,7 @@ for (var i = pipes.length - 1; i >= 0; i--) {
       
     }
   }
-  text(score, 50, 30);
+  text(score, 50, 50);
  
   if (score == 5) {
     playing = false;
