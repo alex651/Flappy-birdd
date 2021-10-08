@@ -12,6 +12,7 @@ function preload() {
   jumpSound = loadSound("hop.wav")
   backgroundSound = loadSound("kahoot.mp3");
   dieSound = loadSound("die.mp3")
+  cheerSound = loadSound("cheer.mp3")
 }
 
 function setup() {
@@ -64,10 +65,10 @@ for (var i = pipes.length - 2; i >= 0; i--) {
   }
   text(score, 50, 50);
  
-  if (score == 25) {
+  if (score == 5) {
     playing = false;
     noLoop();
-    dieSound.play();
+    cheerSound.play();
   }
 }
 
