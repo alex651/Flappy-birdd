@@ -30,13 +30,7 @@ function pipe() {
     // rect(this.x, y_b, this.w, height_b);
     image(pipeImg, this.x, y_b, this.w, height_b);
   }
-  this.pass = function(bird) {
-    if (bird.x > this.x + this.w) {
-      return true;
-    }
-    return false;
-  }
-
+  
   this.update = function() {
     this.x -= this.speed;
 

@@ -42,12 +42,12 @@ function game() {
   // draw bird
   bird.update();
   bird.show();
-  if (frameCount % 75 == 0) {
+  if (frameCount % 55 == 0) {
     pipes.push(new pipe());
     score = score + 1;
   }
 
-for (var i = pipes.length - 1; i >= 0; i--) {
+for (var i = pipes.length - 2; i >= 0; i--) {
     pipes[i].show();
     pipes[i].update();
     
@@ -64,7 +64,7 @@ for (var i = pipes.length - 1; i >= 0; i--) {
   }
   text(score, 50, 50);
  
-  if (score == 5) {
+  if (score == 25) {
     playing = false;
     noLoop();
     dieSound.play();
