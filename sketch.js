@@ -1,7 +1,7 @@
 var bird;
 var pipes = [];
 var jumpSound;
-var gameState = 0; // 0 = menu, 1 = game
+var gameState = 0; // 0 = menu, 1 = game, 2 = winMenu
 let birdImg, pipeRevImg, pipeImg;
 var score = 0;
 function preload() {
@@ -36,6 +36,7 @@ function draw(){
   if (gameState == 1) {
     game();
   }
+
 }
 
 function game() {
@@ -43,7 +44,7 @@ function game() {
   // draw bird
   bird.update();
   bird.show();
-  if (frameCount % 55 == 0) {
+  if (frameCount % 75 == 0) {
     pipes.push(new pipe());
     score = score + 1;
   }
@@ -69,11 +70,18 @@ for (var i = pipes.length - 2; i >= 0; i--) {
     playing = false;
     noLoop();
     cheerSound.play();
+    winMenu();
   }
 }
 
 if (score == 1) {
     score += 1
+}
+
+function winMenu() {
+  background(backgroundImg);
+  text("You won!!", 25, 45);
+  victoryGIF = createImg("dansendebanaan.gif");
 }
 
 function keyPressed(){
