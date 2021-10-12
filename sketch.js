@@ -80,8 +80,11 @@ if (score == 1) {
 
 function winMenu() {
   background(backgroundImg);
-  text("You won!!", 25, 45);
+  textSize(35)
+  fill("white")
+  text("You won!!!", 100, 300)
   victoryGIF = createImg("dansendebanaan.gif");
+  victoryGIF.position(70, 350)
 }
 
 function keyPressed(){
