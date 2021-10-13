@@ -44,7 +44,7 @@ function game() {
   // draw bird
   bird.update();
   bird.show();
-  if (frameCount % 75 == 0) {
+  if (frameCount % 60 == 0) {
     pipes.push(new pipe());
     score = score + 1;
   }
@@ -66,7 +66,7 @@ for (var i = pipes.length - 2; i >= 0; i--) {
   }
   text(score, 50, 50);
  
-  if (score == 5) {
+  if (score == 25) {
     playing = false;
     noLoop();
     cheerSound.play();
