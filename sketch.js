@@ -4,6 +4,7 @@ var jumpSound;
 var gameState = 0; // 0 = menu, 1 = game, 2 = winMenu
 let birdImg, pipeRevImg, pipeImg;
 var score = 0;
+var hoogstescore = 0;
 function preload() {
   birdImg = loadImage("banaan.png");
   backgroundImg = loadImage("achtergrond.jpg")
@@ -31,6 +32,7 @@ function draw(){
     textSize(35)
     fill("white")
     text("Press space to start", 50, 300) 
+
   }
 
   if (gameState == 1) {
@@ -64,7 +66,7 @@ for (var i = pipes.length - 2; i >= 0; i--) {
       
     }
   }
-  text(score, 50, 50);
+  text(score, 20, 50);
  
   if (score == 25) {
     playing = false;
@@ -72,6 +74,9 @@ for (var i = pipes.length - 2; i >= 0; i--) {
     cheerSound.play();
     winMenu();
   }
+   if (score > hoogstescore)
+      hoogstescore = score;
+  text('highscore: '+ hoogstescore,20,85)
 }
 
 if (score == 1) {
