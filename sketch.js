@@ -39,6 +39,10 @@ function draw(){
     game();
   }
 
+  if (gameState == 2) {
+    gameover();
+  }
+
 }
 
 function game() {
@@ -61,9 +65,8 @@ for (var i = pipes.length - 2; i >= 0; i--) {
       rectMode(CENTER);
       fill(255);
       playing = false;
-      noLoop();
       dieSound.play();
-      
+      gameState = 2;
     }
   }
   text(score, 20, 50);
@@ -92,6 +95,13 @@ function winMenu() {
   victoryGIF.position(70, 350)
 }
 
+function gameover() {
+  background(backgroundImg);
+  textSize(35)
+  fill("white")
+  text("You lose!!!", 100, 300)
+}
+
 function keyPressed(){
   if (key == ' ') {
     bird.up();
@@ -106,5 +116,10 @@ console.log(keyCode);
   if (keyCode == 32) {
     gameState = 1;
   }
+
+   if (keyCode == 69) {
+    gameState = 2;
+  }
+
 }
 
